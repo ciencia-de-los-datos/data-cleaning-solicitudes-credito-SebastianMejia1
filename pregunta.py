@@ -6,6 +6,7 @@ Realice la limpieza del dataframe. Los tests evaluan si la limpieza fue realizad
 correctamente. Tenga en cuenta datos faltantes y duplicados.
 
 """
+from distutils.command import clean
 import pandas as pd
 
 def clean_data():
@@ -24,3 +25,5 @@ def clean_data():
     df.dropna(inplace=True)
     return df
 clean_data()
+
+
