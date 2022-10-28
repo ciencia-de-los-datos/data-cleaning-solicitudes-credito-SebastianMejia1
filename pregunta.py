@@ -13,7 +13,7 @@ def clean_data():
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
 
     df.drop(columns= df.columns[0], inplace=True)
-
+    df.dropna(inplace=True)
     for i in ['tipo_de_emprendimiento' , "barrio" ,'comuna_ciudadano']:
         df[i] = df[i].fillna(df[i].mode())
 
@@ -31,8 +31,12 @@ def clean_data():
 
     df.drop_duplicates(keep = 'last', inplace= True)
  
-    
+    print(df)
+
+    df[0].count()
+
+
     return df
 
 
-
+   
